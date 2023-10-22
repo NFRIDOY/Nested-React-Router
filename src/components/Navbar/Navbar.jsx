@@ -13,21 +13,21 @@ export default function Navbar() {
             Home
         </NavLink></li>
         <li><NavLink
-            to="/signup"
+            to="/signupin"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
             }
         >
-            Signup
+            Sign Up & Sign In
         </NavLink></li>
-        <li><NavLink
+        {/* <li><NavLink
             to="/login"
             className={({ isActive, isPending }) =>
                 isPending ? "pending" : isActive ? "active" : ""
             }
         >
             Login
-        </NavLink></li>
+        </NavLink></li> */}
     </>
 
     return (

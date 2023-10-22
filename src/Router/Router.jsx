@@ -6,6 +6,7 @@ import Home from '../pages/home/Home'
 import Error from '../pages/Error/Error'
 import Signup from "../pages/Signup/Signup";
 import Login from "../pages/Login/Login";
+import SignUpIn from "../pages/SignUpIn/SignUpIn";
 
 const router = createBrowserRouter([
     {
@@ -25,15 +26,23 @@ const router = createBrowserRouter([
                 // errorElement: <Error></Error>,
             },
             {
-                path: "/signup",
-                element: <Signup></Signup>,
+                path: "/signupin",
+                element: <SignUpIn>2</SignUpIn>,
                 // errorElement: <Error></Error>,
+                children: [
+                    {
+                        path: "/signupin/signup",
+                        element: <Signup></Signup>,
+                        // errorElement: <Error></Error>,
+                    },
+                    {
+                        path: "/signupin",
+                        element: <Login></Login>,
+                        // errorElement: <Error></Error>,
+                    },
+                ]
             },
-            {
-                path: "/login",
-                element: <Login></Login>,
-                // errorElement: <Error></Error>,
-            },
+
 
         ],
 
