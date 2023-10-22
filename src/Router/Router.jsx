@@ -4,31 +4,35 @@ import {
 import MainLayout from "../Layout/MainLayout";
 import Home from '../pages/home/Home'
 import Error from '../pages/Error/Error'
+import Signup from "../pages/Signup/Signup";
+import Login from "../pages/Login/Login";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <MainLayout></MainLayout>,
-        errorElement: <Error></Error>,
+        // errorElement: <Error></Error>,
         children: [
             {
                 path: "/",
                 loader: () => fetch('/data.json'),
-                element: <Home></Home>
+                element: <Home></Home>,
+                // errorElement: <Error></Error>,
             },
             {
-                path: "/donation",
+                path: "/second",
                 element: <div>2</div>,
-                // errorElement: <DonationError></DonationError>,
+                // errorElement: <Error></Error>,
             },
             {
-                path: "/statistics",
-                element: <div>3</div>
+                path: "/signup",
+                element: <Signup></Signup>,
+                // errorElement: <Error></Error>,
             },
             {
-                path: "/donationDetails/:id",
-                loader: () => fetch("/donation.json"),
-                element: <div>4</div>,
+                path: "/login",
+                element: <Login></Login>,
+                // errorElement: <Error></Error>,
             },
 
         ],
